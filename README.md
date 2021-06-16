@@ -1,5 +1,7 @@
 # disenio
 
+Basic Flutter designs training
+
 A new Flutter project.
 
 ## Getting Started
