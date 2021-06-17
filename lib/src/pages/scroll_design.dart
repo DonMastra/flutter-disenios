@@ -1,18 +1,73 @@
 import 'package:flutter/material.dart';
 
 class ScrollPage extends StatelessWidget {
+  final boxDecoration = BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      stops: [0.3, 0.7],
+      colors: [
+        Color(0xff5EE8C5),
+        Color(0xff30BAD6),
+      ],
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
-        body: Stack(
+      body: Container(
+        decoration: boxDecoration,
+        child: PageView(
+          physics: BouncingScrollPhysics(),
+          scrollDirection: Axis.vertical,
           children: [
-            // Background image
-            Background(),
-
-            // Main Content
-            MainContent(),
+            Page1(),
+            Page2(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        // Background image
+        Background(),
+
+        // Main Content
+        MainContent(),
+      ],
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xff30BAD6),
+      child: Center(
+        child: TextButton(
+          onPressed: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            child: Text(
+              'Bienvenido',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+              ),
+            ),
+          ),
+          style: TextButton.styleFrom(
+            backgroundColor: Color(0xff0098FA),
+            shape: StadiumBorder(),
+          ),
         ),
       ),
     );
@@ -22,14 +77,39 @@ class ScrollPage extends StatelessWidget {
 class MainContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text('Hola Mundo'),
-        Text('Hola Mundo'),
-        Text('Hola Mundo'),
-      ],
+    final textStyle = TextStyle(
+      fontSize: 50,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+    return SafeArea(
+      bottom: false,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            '11°',
+            style: textStyle,
+          ),
+          Text(
+            'Miércoles',
+            style: textStyle,
+          ),
+          //TODO: Expanded()
+          Expanded(
+            child: Container(),
+          ),
+          Icon(
+            Icons.keyboard_arrow_down_sharp,
+            size: 100,
+            color: Colors.white,
+          ),
+        ],
+      ),
     );
   }
 }
