@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:disenio/widgets/background.dart';
+import 'package:disenio/widgets/card_table.dart';
 import 'package:disenio/widgets/custom_bottom_navigationbar.dart';
 import 'package:disenio/widgets/page_title.dart';
-import 'package:disenio/widgets/background.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -27,7 +28,10 @@ class _HomeBody extends StatelessWidget {
       child: Column(
         children: [
           // Titles
-          PageTitle()
+          PageTitle(),
+
+          // Card table
+          CardTable()
         ],
       ),
     );

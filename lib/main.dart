@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:disenio/src/pages/home_page.dart';
-import 'package:disenio/src/pages/scroll_design.dart';
-import 'package:disenio/src/pages/basic_design.dart';
+import 'package:disenio/pages/home_page.dart';
+import 'package:disenio/pages/scroll_design.dart';
+import 'package:disenio/pages/basic_design.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       title: 'Material App',
       initialRoute: 'home_page',
       routes: {

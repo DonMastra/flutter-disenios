@@ -99,7 +99,6 @@ class MainContent extends StatelessWidget {
             'Miércoles',
             style: textStyle,
           ),
-          //TODO: Expanded()
           Expanded(
             child: Container(),
           ),
